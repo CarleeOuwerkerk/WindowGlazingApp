@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "HelloWorld\HelloWorld.csproj", "{EB2A4F0F-BBA7-4DFE-A9DF-4D6A98AFC280}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glazer", "HelloWorld\Glazer.csproj", "{EB2A4F0F-BBA7-4DFE-A9DF-4D6A98AFC280}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

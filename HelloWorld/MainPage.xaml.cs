@@ -25,6 +25,122 @@ namespace HelloWorld
         public MainPage()
         {
             this.InitializeComponent();
+
+            List<string> colours = new List<string>();
+            colours.Add("Black");
+            colours.Add("Blue");
+            colours.Add("Brown");
+            colourDropdown.ItemsSource = colours;
+        }
+
+        const double MAX_WIDTH = 5.0;
+        const double MIN_WIDTH = 0.5;
+        const double MAX_HEIGHT = 3.0;
+        const double MIN_HEIGHT = 0.75;
+
+        Window window = new Window();
+                
+        private void Slider_KeyUp(object sender, KeyRoutedEventArgs e)
+        {
+            window.numberOfWindows = quantitySlider.Value;
+
+        }
+
+        public void calculateLength(double width, double height)
+        {
+            window.length = (2 * (width + height) * 3.25);
+        }
+
+        public void calculateArea(double width, double height)
+        {
+            window.area = (2 * (width * height));
+        }
+
+        private void colourDropdown_KeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            window.tint = colourDropdown.DataContext.ToString();
+        }
+
+        private void widthBox_KeyUp(object sender, KeyRoutedEventArgs e)
+        {
+            string widthText = widthBox.Text;
+
+            try
+            {
+                double width = double.Parse(widthText);
+
+                if ((width > MIN_HEIGHT) && (width < MAX_HEIGHT))
+                {
+                    window.windowWidth = width;
+
+                    submitButton.IsEnabled = true;
+                }
+                else
+                {
+                    heightWarning.Text = "Please enter a value between "
+                    + MIN_WIDTH
+                    + " and "
+                    + MAX_WIDTH;
+
+                    submitButton.IsEnabled = false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                heightWarning.Text = "Please enter a value between "
+                    + MIN_HEIGHT
+                    + " and "
+                    + MAX_HEIGHT;
+
+                submitButton.IsEnabled = false;
+            }
+        }
+
+        private void heightBox_KeyUp(object sender, KeyRoutedEventArgs e)
+        {
+            string heightText = heightBox.Text;
+
+            try
+            {
+                double height = double.Parse(heightText);
+
+                if ((height > MIN_HEIGHT) && (height < MAX_HEIGHT))
+                {
+                    window.windowHeight = height;
+
+                    submitButton.IsEnabled = true;
+                }
+                else
+                {
+                    widthWarning.Text = "Please enter a value between "
+                    + MIN_HEIGHT
+                    + " and "
+                    + MAX_HEIGHT;
+
+                    submitButton.IsEnabled = false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                widthWarning.Text = "Please enter a value between " 
+                    + MIN_HEIGHT 
+                    + " and "
+                    + MAX_HEIGHT;
+
+                    submitButton.IsEnabled = false;
+            }
+        }
+
+        private void submitButton_Click(object sender, RoutedEventArgs e)
+        {
+            calculateLength(double.Parse(widthBox.Text), double.Parse(heightBox.Text));
+
+            calculateArea(double.Parse(widthBox.Text), double.Parse(heightBox.Text));
+
+            this.Frame.Navigate(typeof(Order), window);
         }
     }
 }
+
