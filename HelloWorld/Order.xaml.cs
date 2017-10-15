@@ -22,9 +22,31 @@ namespace HelloWorld
     /// </summary>
     public sealed partial class Order : Page
     {
-        public Order()
+        public Order(Window window)
         {
             this.InitializeComponent();
+
+            DateTime date = DateTime.Now;
+
+            widthBox.Text = "2";
+            heightBox.Text = "2";
+            tintBox.Text = "2";
+            quantityBox.Text = "2";
+            dateBox.Text = "2";
+            areaBox.Text = "2";
+            lengthBox.Text = "2";
+
+            //widthBox.Text = window.windowWidth.ToString();
+            //heightBox.Text = window.windowHeight.ToString();
+            //tintBox.Text = window.tint;
+            //quantityBox.Text = window.quantity.ToString();
+            //dateBox.Text = date.ToString();
+            //areaBox.Text = window.area.ToString();
+            //lengthBox.Text = window.length.ToString();
         }
+
+
+        
+
     }
 }

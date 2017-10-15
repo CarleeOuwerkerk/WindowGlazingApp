@@ -18,7 +18,7 @@
         <TextBlock x:Name="widthWarning" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="640,230,0,0" FontStyle="Italic"/>
         <TextBlock x:Name="heightWarning" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="640,297,0,0" FontStyle="Italic"/>
         <Button x:Name="submitButton" Content="Submit" HorizontalAlignment="Left" Margin="467,510,0,0" VerticalAlignment="Top" Click="submitButton_Click" FontSize="22"/>
-        <TextBlock HorizontalAlignment="Left" Margin="339,54,0,0" TextWrapping="Wrap" Text="Window Glazing" VerticalAlignment="Top" FontSize="48" Width="349"/>
+        <TextBlock x:Name="pageTitle" HorizontalAlignment="Left" Margin="339,54,0,0" TextWrapping="Wrap" Text="Window Glazing" VerticalAlignment="Top" FontSize="48" Width="349"/>
         <TextBlock HorizontalAlignment="Left" Margin="367,151,0,0" TextWrapping="Wrap" Text="Please enter your specifications:" VerticalAlignment="Top" FontSize="20" FontStyle="Italic"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Quantity:" VerticalAlignment="Top" Margin="347,427,0,0" FontSize="20"/>
     </Grid>

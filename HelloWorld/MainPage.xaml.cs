@@ -38,8 +38,11 @@ namespace HelloWorld
         const double MAX_HEIGHT = 3.0;
         const double MIN_HEIGHT = 0.75;
 
-        Window window = new Window();
-                
+        GlazeProp window = new GlazeProp();
+
+
+
+
         private void Slider_KeyUp(object sender, KeyRoutedEventArgs e)
         {
             window.numberOfWindows = quantitySlider.Value;
@@ -69,15 +72,17 @@ namespace HelloWorld
             {
                 double width = double.Parse(widthText);
 
-                if ((width > MIN_HEIGHT) && (width < MAX_HEIGHT))
+                if ((width >= MIN_WIDTH) && (width <= MAX_WIDTH))
                 {
                     window.windowWidth = width;
 
-                    submitButton.IsEnabled = true;
+                    widthWarning.Text = " ";
+
+                    submitButton.IsEnabled = true;                    
                 }
                 else
                 {
-                    heightWarning.Text = "Please enter a value between "
+                    widthWarning.Text = "Please enter a value between "
                     + MIN_WIDTH
                     + " and "
                     + MAX_WIDTH;
@@ -88,10 +93,10 @@ namespace HelloWorld
             }
             catch (Exception ex)
             {
-                heightWarning.Text = "Please enter a value between "
-                    + MIN_HEIGHT
+                widthWarning.Text = "Please enter a value between "
+                    + MIN_WIDTH
                     + " and "
-                    + MAX_HEIGHT;
+                    + MAX_WIDTH;
 
                 submitButton.IsEnabled = false;
             }
@@ -105,31 +110,32 @@ namespace HelloWorld
             {
                 double height = double.Parse(heightText);
 
-                if ((height > MIN_HEIGHT) && (height < MAX_HEIGHT))
+                if ((height >= MIN_HEIGHT) && (height <= MAX_HEIGHT))
                 {
                     window.windowHeight = height;
+
+                    heightWarning.Text = " ";
 
                     submitButton.IsEnabled = true;
                 }
                 else
                 {
-                    widthWarning.Text = "Please enter a value between "
+                    heightWarning.Text = "Please enter a value between "
                     + MIN_HEIGHT
                     + " and "
                     + MAX_HEIGHT;
 
                     submitButton.IsEnabled = false;
                 }
-
             }
             catch (Exception ex)
             {
-                widthWarning.Text = "Please enter a value between " 
-                    + MIN_HEIGHT 
+                heightWarning.Text = "Please enter a value between "
+                    + MIN_HEIGHT
                     + " and "
                     + MAX_HEIGHT;
 
-                    submitButton.IsEnabled = false;
+                submitButton.IsEnabled = false;
             }
         }
 
@@ -139,8 +145,19 @@ namespace HelloWorld
 
             calculateArea(double.Parse(widthBox.Text), double.Parse(heightBox.Text));
 
-            this.Frame.Navigate(typeof(Order), window);
+                this.Frame.Navigate(typeof(Order), window);
         }
+    }
+
+    public class GlazeProp
+    {
+        public string tint { get; set; }
+        public double numberOfWindows { get; set; }
+        public double windowHeight { get; set; }
+        public double windowWidth { get; set; }
+        public double length { get; set; }
+        public double area { get; set; }
+
     }
 }
 
