@@ -21,7 +21,7 @@
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Date:" VerticalAlignment="Top" Margin="381,366,0,0" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Area:" VerticalAlignment="Top" Margin="381,400,0,0" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Length:" VerticalAlignment="Top" Margin="361,432,0,0" FontSize="20"/>
-        <TextBlock x:Name="dateBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="461,366,0,0" FontSize="20" Width="160"/>
+        <TextBlock x:Name="dateBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="461,366,0,0" FontSize="20" Width="341"/>
         <TextBlock x:Name="areaBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="461,400,0,0" FontSize="20" Width="160"/>
         <TextBlock x:Name="lengthBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="461,432,0,0" FontSize="20" Width="160"/>
 

@@ -8,8 +8,8 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Slider x:Name="quantitySlider" HorizontalAlignment="Left" Margin="446,426,0,0" VerticalAlignment="Top" Width="211" KeyUp="Slider_KeyUp"/>
-        <ComboBox x:Name="colourDropdown" HorizontalAlignment="Left" Margin="446,361,0,0" VerticalAlignment="Top" Width="143" KeyDown="colourDropdown_KeyDown"/>
+        <Slider x:Name="quantitySlider" HorizontalAlignment="Left" Margin="446,426,0,0" VerticalAlignment="Top" Width="211" ValueChanged="quantitySlider_ValueChanged"/>
+        <ComboBox x:Name="colourDropdown" HorizontalAlignment="Left" Margin="446,361,0,0" VerticalAlignment="Top" Width="143" SelectionChanged="colourDropdown_SelectionChanged"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Width:" VerticalAlignment="Top" Margin="369,226,0,0" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Height:" VerticalAlignment="Top" Margin="363,292,0,0" FontSize="20"/>
         <TextBox x:Name="widthBox" HorizontalAlignment="Left" Margin="446,223,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" KeyUp="widthBox_KeyUp" RenderTransformOrigin="-0.744,2.525" Width="143"/>

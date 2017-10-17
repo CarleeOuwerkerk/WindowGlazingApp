@@ -39,14 +39,10 @@ namespace HelloWorld
         const double MIN_HEIGHT = 0.75;
 
         GlazeProp window = new GlazeProp();
-
-
-
-
-        private void Slider_KeyUp(object sender, KeyRoutedEventArgs e)
+               
+        private void quantitySlider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
             window.numberOfWindows = quantitySlider.Value;
-
         }
 
         public void calculateLength(double width, double height)
@@ -59,9 +55,9 @@ namespace HelloWorld
             window.area = (2 * (width * height));
         }
 
-        private void colourDropdown_KeyDown(object sender, KeyRoutedEventArgs e)
+        private void colourDropdown_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            window.tint = colourDropdown.DataContext.ToString();
+            window.tint = (sender as ComboBox).SelectedItem as string;
         }
 
         private void widthBox_KeyUp(object sender, KeyRoutedEventArgs e)
@@ -145,8 +141,11 @@ namespace HelloWorld
 
             calculateArea(double.Parse(widthBox.Text), double.Parse(heightBox.Text));
 
+            //Order order = new Order(window);
+
                 this.Frame.Navigate(typeof(Order), window);
         }
+
     }
 
     public class GlazeProp
